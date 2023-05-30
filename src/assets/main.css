@@ -1,0 +1,49 @@
+@import './base.css';
+
+#app{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: #a5eaea;
+  min-height: 100vh;
+  max-height: max-content;
+  font-family: "Roboto", "Arial", sans-serif;
+
+
+}
+
+input[type="number"] {
+  background-color: #d8fafa;
+  vertical-align: top;
+  outline: none;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+  text-indent:30px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #0e7373;
+  font-size: 2em;
+  border-radius: 3px;
+  appearance: none;
+
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
