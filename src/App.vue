@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import GetMemes from "@/views/GetMemes.vue";
 </script>
 
 
@@ -8,11 +7,12 @@ import GetMemes from "@/views/GetMemes.vue";
 <template>
   <header class ="header">
       <nav>
-        <RouterLink to="/" class = 'nav'>Home</RouterLink>
-        <RouterLink to="/modal" class = 'nav'>Modal</RouterLink>
-          <RouterLink to="/add" class = 'nav'>Add</RouterLink>
-          <RouterLink to="/addA" class = 'nav'>AddOnlyA</RouterLink>
-          <RouterLink to="/getMemes" class = 'nav'>GetMemes</RouterLink>
+        <RouterLink to="/" class='nav'>Home</RouterLink>
+        <RouterLink to="/modal" class='nav'>Modal</RouterLink>
+        <RouterLink to="/add" class='nav'>Add</RouterLink>
+        <RouterLink to="/addA" class='nav'>AddOnlyA</RouterLink>
+        <RouterLink to="/getMemes" class='nav'>GetMemes</RouterLink>
+        <RouterLink to="/chart" class='nav'>Chart</RouterLink>
       </nav>
   </header>
 

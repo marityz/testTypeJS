@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue';
 import ModalView from "@/views/ModalView.vue";
 import AddView from "@/views/AddView.vue";
 import AddAView from "@/views/AddAView.vue";
 import GetMemes from "@/views/GetMemes.vue";
-
+import ChartView from "@/views/ChartView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,26 +17,30 @@ const router = createRouter({
     {
       path: '/modal',
       name: 'modal',
-      component:  ModalView
+      component: ModalView
     },
     {
       path: '/add',
       name: 'add',
-      component:  AddView
+      component: AddView
     },
     {
       path: '/addA',
       name: 'addA',
-      component:  AddAView
+      component: AddAView
     },
     {
       path: '/getMemes',
       name: 'getMemes',
-      component:  GetMemes
+      component: GetMemes
+    },
+    {
+      path: '/chart',
+      name: 'chart',
+      component: ChartView
     }
 
   ]
 
 })
-
 export default router

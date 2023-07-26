@@ -1,7 +1,3 @@
-<template>
-
-</template>
-
 <script>
 import {reactive} from "vue";
 
@@ -14,7 +10,3 @@ const obj =reactive(
 
 export default obj;
 </script>
-
-<style scoped>
-
-</style>

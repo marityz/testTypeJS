@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import obj from '@/Data.vue';
+import {computed, reactive, ref} from 'vue';
+import { switchTheme} from '@/components/GlobalState';
+import Item from '@/components/Item.vue';
+
+const text = ref();
+
+function removeItem(index){
+    obj.arr.splice(index, 1)
+}
+function AddArray(){
+    obj.arr.push(text.value);
+    text.value = "";
+}
+function deleteArray(){
+    obj.arr.pop();
+}
+const publishedArr = computed(() => {
+    return obj.arr.length > 0 ? 'Yes' : 'No'
+})
+</script>
+
 <template>
     <main v-bind:class="{body_rose:switchTheme.state}">
 
@@ -14,47 +37,19 @@
 <!--        <button class="button-add" @click="deleteArray" >Delete</button>-->
     </form>
         </main>
-
 </template>
 
-<script setup>
-
-import obj from "@/Data.vue";
-import {computed, reactive, ref} from "vue";
-import { switchTheme} from "@/components/GlobalState";
-import Item from "@/components/Item.vue";
-
-const text = ref();
-
-function removeItem(index){
-   obj.arr.splice(index, 1)
-
-}
-
-
-
-function AddArray(){
- obj.arr.push(text.value);
- text.value = "";
-}
-function deleteArray(){
-   obj.arr.pop();
-}
-const publishedArr = computed(() => {
-    return obj.arr.length > 0 ? 'Yes' : 'No'
-})
-</script>
-
 <style scoped>
-.body-rose{
+.body-rose {
     background: deeppink;
 }
-.container-item{
+
+.container-item {
     height: max-content;
 
 }
 
-.input-add{
+.input-add {
     margin-bottom: 1rem;
     height: calc(2.25rem + 2px);
     padding: 0.375rem 0.75rem;
@@ -68,7 +63,8 @@ const publishedArr = computed(() => {
     border: 1px solid #bdbdbd;
     border-radius: 0.25rem;
 }
-.place{
+
+.place {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -77,7 +73,7 @@ const publishedArr = computed(() => {
     margin: auto;
 
 }
-.button-add{
+.button-add {
     display: inline-block;
     border-radius: 4px;
     background-color: #0e7373;
@@ -92,5 +88,4 @@ const publishedArr = computed(() => {
     cursor: pointer;
     margin: 5px;
 }
-
 </style>
