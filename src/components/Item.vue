@@ -11,7 +11,7 @@ const emit = defineEmits(['removeItem'])
     <div class="item">{{ props.data }}</div>
     <span
       class="text-delete"
-      @click="emit("removeItem", props.index)"
+      @click="emit('removeItem', props.index)"
     >
     ✘
     </span>
