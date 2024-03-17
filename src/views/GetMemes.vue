@@ -4,7 +4,6 @@ import {reactive, ref, watch} from "vue";
 import {switchTheme} from "@/components/GlobalState";
 import Quote from "@/components/Quote.vue";
 
-
 const numberMemes = ref(Number);
 const memes = reactive({
     data: []
@@ -24,7 +23,7 @@ const getNumberQuotes = watch(numberMemes, async (newNumberMemes, oldNumberMemes
 </script>
 
 <template>
-  <main v-bind:class="{body_rose:switchTheme.state}">
+  <main v-bind:class="{ body_rose:switchTheme.state }">
     <button
       class="switch"
       @click="switchTheme.changeTheme"
@@ -84,15 +83,9 @@ const getNumberQuotes = watch(numberMemes, async (newNumberMemes, oldNumberMemes
   grid-gap: 20px;
 }
 
-.quotes-container:nth-child(2n) {
-
-}
-
-
 .form {
   display: flex;
   flex-direction: column;
-
 }
 
 .input-form {

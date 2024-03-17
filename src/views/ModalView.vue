@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Modal from "@/components/Modal.vue";
-import {ref} from "vue";
-import {switchTheme} from "@/components/GlobalState";
+import { ref } from "vue";
+import { switchTheme } from "@/components/GlobalState";
 
 const statusModal = ref(true)
 

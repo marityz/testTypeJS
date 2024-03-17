@@ -5,12 +5,7 @@ import CustomInput from '@/components/CustomInput.vue';
 
 const searchText = ref('');
 
-const res = computed({
-    get() {
-      return searchText.value.replace(/[a-zа-яё\/,./]/gi, 'A')
-    }
-  }
-)
+const res = computed(() => searchText.value.replace(/[a-zа-яё\/,./]/gi, 'A'));
 </script>
 
 <template>

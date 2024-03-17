@@ -3,6 +3,7 @@ import {computed, defineEmits, defineProps} from 'vue';
 
 const props = defineProps(['inputCustom'])
 const emit = defineEmits(['update:inputCustom'])
+
 const value = computed({
   get() {
     return props.inputCustom;
