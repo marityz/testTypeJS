@@ -10,10 +10,10 @@ const memes = reactive({
   }
 );
 
-const getNumberQuotes = watch(numberMemes, async (newNumberMemes, oldNumberMemes) => {
+const getNumberQuotes = watch(numberMemes, async (newNumberMemes) => {
   if (newNumberMemes > 0) {
     try {
-      const {res, data} = await axios.get(`https://meme-api.com/gimme/${numberMemes.value}`)
+      const { data } = await axios.get(`https://meme-api.com/gimme/${numberMemes.value}`)
       memes.data = data.memes;
     } catch (error) {
       memes.data = 'Error! Could not reach the API. ' + error;
@@ -50,6 +50,7 @@ const getNumberQuotes = watch(numberMemes, async (newNumberMemes, oldNumberMemes
     <div class="quotes-container">
       <div
         v-for="(mem, index) in memes.data"
+        :key="index"
         class="quote-container"
       >
         <Quote :mem="mem"/>
@@ -94,7 +95,7 @@ const getNumberQuotes = watch(numberMemes, async (newNumberMemes, oldNumberMemes
   height: 80px;
   margin: auto;
   appearance: none;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
 }
 
 .label-input {
@@ -122,6 +123,6 @@ const getNumberQuotes = watch(numberMemes, async (newNumberMemes, oldNumberMemes
   height: 70px;
   transition: all 0.5s;
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
 }
 </style>

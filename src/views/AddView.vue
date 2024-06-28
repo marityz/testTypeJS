@@ -9,7 +9,7 @@ const text = ref();
 const removeItem = (index) => obj.arr.splice(index, 1);
 const AddArray = () => {
   obj.arr.push(text.value);
-  text.value = "";
+  text.value = '';
 };
 const deleteArray = () => obj.arr.pop();
 
@@ -25,10 +25,14 @@ const publishedArr = computed(() => obj.arr.length > 0 ? 'Yes' : 'No');
       <input class='input-add' v-model="text" @keyup.enter="AddArray">
 
       <div class='container-item' v-if="publishedArr" v-for="(item, i) in obj.arr ">
-        <Item :index="i" :data='item' @removeItem="removeItem"></Item>
+        <Item
+          :index="i"
+          :data="item"
+          @removeItem="removeItem"
+        />
       </div>
-<!--      <button class="button-add" @click="AddArray">Add</button>-->
-<!--      <button class="button-add" @click="deleteArray">Delete</button>-->
+      <!--      <button class="button-add" @click="AddArray">Add</button>-->
+      <!--      <button class="button-add" @click="deleteArray">Delete</button>-->
     </form>
   </main>
 </template>
@@ -40,7 +44,6 @@ const publishedArr = computed(() => obj.arr.length > 0 ? 'Yes' : 'No');
 
 .container-item {
   height: max-content;
-
 }
 
 .input-add {
@@ -65,7 +68,6 @@ const publishedArr = computed(() => obj.arr.length > 0 ? 'Yes' : 'No');
   align-items: center;
   min-height: 100vh;
   margin: auto;
-
 }
 
 .button-add {
