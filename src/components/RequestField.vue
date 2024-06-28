@@ -1,41 +1,33 @@
 <script setup lang="ts">
 import axios from 'axios';
-import { ref } from 'vue';
+import { reactive } from 'vue';
 
-const getQuote = ref('')
-type Quote = {
-  quote: String,
-};
-type getQuoteResponse = {
-  data: Quote[];
-};
-async function getInformation() {
+const state = reactive({
+  getQuote: '',
+});
+
+const getInformation = async () => {
   try {
-    const { data, status } = await axios.get<getQuoteResponse>(
-      'https://api.kanye.rest'
-    );
+    const { data } = await axios.get('https://api.kanye.rest');
 
-    JSON.stringify(data, null, 4);
-
-    getQuote.value = data.quote;
-
-    return data;
+    state.getQuote = data.quote;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      return error.message;
+      console.error(error);
     } else {
-      return 'An unexpected error occurred';
+      console.log('An unexpected error occurred');
     }
   }
-}
+};
 
 getInformation();
 </script>
 
 <template>
   <div class="request-field">
-    <div class="quote">{{ getQuote }}</div>
+    <div class="quote">{{ state.getQuote }}</div>
   </div>
+
   <button
     @click="getInformation"
     class="button"
@@ -46,7 +38,6 @@ getInformation();
 
 <style scoped>
 .request-field {
-  border: #2c3e50 solid 2px;
   min-height: 50vh;
   max-height: max-content;
   width: 80%;
@@ -58,8 +49,10 @@ getInformation();
   font-size: 3em;
   align-items: center;
   justify-content: center;
-  background: #3acbcb;
+  border: #204141 solid 2px;
+  background: #3d7575;
   border-radius: 17px;
+  color: #fff;
 }
 
 .button {
@@ -68,9 +61,9 @@ getInformation();
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  background-color: #0e7373;
+  background-color: #232626;
   border: none;
-  color: #FFFFFF;
+  color: #fff;
   text-align: center;
   font-size: 28px;
   padding: 20px;
@@ -78,5 +71,6 @@ getInformation();
   height: 70px;
   transition: all 0.5s;
   cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
 }
 </style>

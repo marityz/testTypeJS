@@ -3,7 +3,7 @@ import HomeView from '@/views/HomeView.vue';
 import ModalView from "@/views/ModalView.vue";
 import AddView from "@/views/AddView.vue";
 import AddAView from "@/views/AddAView.vue";
-import GetMemes from "@/views/GetMemes.vue";
+import GetMemes from "@/views/GetMemesView.vue";
 import ChartView from "@/views/ChartView.vue";
 import CatchMeNotView from "@/views/CatchMeNotView.vue";
 

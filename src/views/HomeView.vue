@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {switchTheme} from '@/components/GlobalState';
+import { switchTheme } from '@/components/GlobalState';
 import RequestField from '@/components/RequestField.vue';
 </script>
 
@@ -11,7 +11,8 @@ import RequestField from '@/components/RequestField.vue';
     >
       switch
     </button>
-    <RequestField/>
+
+    <request-field/>
   </main>
 </template>
 

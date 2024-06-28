@@ -4,12 +4,10 @@
   margin: 0;
   padding: 0;
   position: relative;
-  background: #a5eaea;
+  background: #cae8e8;
   min-height: 100vh;
-  max-height: max-content;
-  font-family: "Roboto", "Arial", sans-serif;
-
-
+  max-height: 100%;
+  font-family: "Arial", sans-serif;
 }
 
 input[type="number"] {
@@ -27,7 +25,6 @@ input[type="number"] {
   font-size: 2em;
   border-radius: 3px;
   appearance: none;
-
 }
 
 input[type=number]::-webkit-inner-spin-button,

@@ -2,53 +2,51 @@
 defineProps({
     mem: {
       type: Object,
-      default: {}
+      default: () => ({}),
     }
   }
 )
 </script>
 
 <template>
-  <div class="quote-position">
-    <div class="quote">
-      {{ mem.title }}
-    </div>
+  <div class="quote">
     <img
       :src="mem.url"
-      class="img"
-     >
-    <p class="category">Author: {{ mem.author }}</p>
-  </div>
+      class="quote__img"
+    >
 
+    <div class="quote__in">
+      <div class="quote__title">{{ mem.title }}</div>
+
+      <p class="quote__text">Author: {{ mem.author }}</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-.quote-position {
-  display: grid;
-  grid-column: 1/5;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 5px;
-  min-height: 200px;
-  max-height: 300px;
-}
-
 .quote {
-  text-align: start;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 300px;
+  width: 500px;
   padding: 10px;
-  min-width: 100%;
-  grid-column: 3  /5;
-  grid-row: 2/4;
+  color: black;
+  border: solid 4px rgb(60, 114, 114);
+  background-color: #93b9b9;
+  border-radius: 16px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgb(14, 115, 115) 0 -2px 6px 0 inset;
 }
 
-.img {
-  text-align: end;
-  grid-column: 1/3;
-  grid-row: 1/4;
-  font-size: 1.1em;
-  font-weight: bold;
-  width: 100%;
-  height: 100%;
+.quote__in {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote__img {
+  width: 60%;
+  max-height: 100%;
+  margin-right: 10px;
 }
 
 .category {
@@ -58,7 +56,6 @@ defineProps({
   text-align: start;
   font-weight: bolder;
   padding: 10px;
-  /*hyphens: auto;*/
   word-wrap: break-word;
 }
 </style>

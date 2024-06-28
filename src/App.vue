@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import {RouterLink, RouterView} from 'vue-router';
+import { RouterLink, RouterView } from 'vue-router';
 </script>
-
 
 <template>
   <header class="header">
@@ -22,13 +21,15 @@ import {RouterLink, RouterView} from 'vue-router';
 <style scoped>
 .header {
   width: 100%;
-  font-size: 2em;
-  background: #0dbbbb;
+  background: #415959;
+  padding: 8px 40px;
+  border: 2px solid #224f4f;
 }
 
 .nav {
+  margin-right: 30px;
   text-decoration: none;
-  margin-right: 20px;
-  color: #2c3e50;
+  font-size: 18px;
+  color: #fff;
 }
 </style>
